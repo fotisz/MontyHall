@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body{
+      margin: auto;
+      width: 900px;
+      font-family: 'Roboto', helvetica, sans-serif;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: normal;
+    }
+    .header{
+      text-align: center;
+    }
+    h4{
+      font-weight: normal;
+    }
+    .header h1{
+      font-size: 50px;
+    }
+    .header h4{
+      font-size: 20px;
+    }
+    iframe.simulation{
+      width: 100%;
+      height: 280px;
+      border: none;
+    }
+    iframe.game{
+      width: 100%;
+      height: 210px;
+      border: none;
+    }
+    iframe.states{
+      width: 100%;
+      height: 350px;
+      border: none;
+      overflow-y: hidden;
+    }
+    table.states{
+      width: 100%;
+      text-align: center;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+    table td, table tr{
+      padding: 15px;
+    }
+    table.states td:not(:last-child){
+
+    }
+    table .prize{
+      color: black;
+    }
+    table .door, table .prize.win, table .prize.lose{
+      border: 4px solid white;
+      box-sizing: border-box;
+      color: white;
+    }
+    table .door.closed{
+      cursor: pointer;
+      background-color: black;
+      color: white;
+    }
+    table .door.open.goat, table .prize.lose{
+      background-color: red;
+    }
+    table .door.open.car, table .prize.win{
+      background-color: green;
+    }
+    table .door.closed.selected, table .door.can-reveal{
+      box-shadow: inset 0px 0px 0px 6px rgba(255, 255, 255, 0.5);
+    }
+    table .door.can-reveal{
+      position: relative;
+    }
+    table .door.can-reveal:after{
+      content: '(revealable)';
+      opacity: 0.5;
+      display: block;
+      width: 100%;
+    }
+    .stickers {
+      display: none;
+    }
+    .twitter-btn{
+      float: right;
+      margin-right: -30px;
+    }
+    .icon-credit{
+      float:right;
+      font-size: 10px;
+      text-align: right;
+    }
+  </style>
+  <body>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+    <script src="../../js/d3.js"></script>
+    <script src="../../js/sticker.js"></script>
+    <script src="../../js/jquery-1.10.2.js"></script>
+    <script src="misc.js"></script>
+    <div class="header">
+      <h1>The Monty Hall Problem</h1>
+    </div>
+    <p>
+      Imagine you're on a game show and given the option to pick among three doors. Behind one is something you want, say, a new car. Behind the other two, something you don't; perhaps a goat. The host knows which door has which item and after you make your pick, they then reveal a goat behind one of the two remaining doors. Do you stay with your first choice or do you switch? This is the Monty Hall problem.
+    </p>
+    <iframe class="game" src="game.html" scrolling="no"></iframe>
+    <p>
+      Most would think the odds of winning by staying or switching would be the same. 50% either way. There's only two doors to pick from, after all.
+    </p>
+    <p>
+      But, if you stay, you'll only win the car 33% of the time. The same odds you had before you were given the choice to switch. If you switch, you'll win 66% of the time.
+    </p>
+    <div class="container-states"></div>
+    <p>
+      It may help to consider the reverse; that 2/3 of the time, your first pick will be a goat. If you do pick a goat as our first choice, the host will have to reveal the second goat. The remaining door is the one with the car!
+    </p>
+    <iframe class="states" src="states.html" scrolling="no"></iframe>
+    <br>
+    <br>
+    <p>
+      If you still don't believe me, here's a simulation of someone playing the game. You can control their strategy (stay or switch) and the time it takes to run through each game. You can also control the number of doors since the same logic applies to those variations of the game.  The effect is more obvious as the number of doors increases.
+    </p>
+    <iframe class="simulation" src="simulation.html" scrolling="no"></iframe>
+    <br>
+    <br>
+    <br>
+    </body>
+    </html>
+
+
+  
