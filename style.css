@@ -1,0 +1,89 @@
+   body{
+      margin: auto;
+      width: 900px;
+      font-family: 'Roboto', helvetica, sans-serif;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: normal;
+    }
+    .header{
+      text-align: center;
+    }
+    h4{
+      font-weight: normal;
+    }
+    .header h1{
+      font-size: 50px;
+    }
+    .header h4{
+      font-size: 20px;
+    }
+    iframe.simulation{
+      width: 100%;
+      height: 280px;
+      border: none;
+    }
+    iframe.game{
+      width: 100%;
+      height: 210px;
+      border: none;
+    }
+    iframe.states{
+      width: 100%;
+      height: 350px;
+      border: none;
+      overflow-y: hidden;
+    }
+    table.states{
+      width: 100%;
+      text-align: center;
+      table-layout: fixed;
+      border-collapse: collapse;
+    }
+    table td, table tr{
+      padding: 15px;
+    }
+    table.states td:not(:last-child){
+    }
+    table .prize{
+      color: black;
+    }
+    table .door, table .prize.win, table .prize.lose{
+      border: 4px solid white;
+      box-sizing: border-box;
+      color: white;
+    }
+    table .door.closed{
+      cursor: pointer;
+      background-color: black;
+      color: white;
+    }
+    table .door.open.goat, table .prize.lose{
+      background-color: red;
+    }
+    table .door.open.car, table .prize.win{
+      background-color: green;
+    }
+    table .door.closed.selected, table .door.can-reveal{
+      box-shadow: inset 0px 0px 0px 6px rgba(255, 255, 255, 0.5);
+    }
+    table .door.can-reveal{
+      position: relative;
+    }
+    table .door.can-reveal:after{
+      content: '(revealable)';
+      opacity: 0.5;
+      display: block;
+      width: 100%;
+    }
+    .stickers {
+      display: none;
+    }
+    .twitter-btn{
+      float: right;
+      margin-right: -30px;
+    }
+    .icon-credit{
+      float:right;
+      font-size: 10px;
+      text-align: right;
+    }
